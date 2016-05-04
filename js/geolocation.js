@@ -20,6 +20,9 @@ function initMap() {
 
 	// Now we're ready to show the store markers
 	placeStoreMarkers();
+
+	// Find out if the user wants to share their location
+	getUserLocation();
 }
 
 
@@ -140,7 +143,31 @@ function showChosenLocation() {
 			lng: theChosenMarker.getPosition().lng()
 		});
 
+		mainMap.setZoom(15);
+
 	}
 
+}
+
+function getUserLocation() {
+
+	// If geolocation exists as a feature on this device
+	if ( navigator.geolocation ) {
+
+		// Ask for the user location
+		navigator.geolocation.getCurrentPosition(function(position){
+			console.log(position);
+
+			// Create a marker for the user
+
+			// Place the marker where the user is
+
+			// Work out the closest shop
+
+
+		});
+
+
+	}
 
 }
